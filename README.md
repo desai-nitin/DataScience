@@ -1,4 +1,4 @@
-##Here I will be practising Data Science tutorials
-Topics:
-EDA
-Supervised ML
+## Here I will be practising Data Science tutorials\n
+Topics:\n
+EDA\n
+Supervised ML\n
