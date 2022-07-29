@@ -1,0 +1,6 @@
+# No zip files
+*.zip
+#vscode
+.vscode
+#ipynb
+.ipynb_checkpoints
