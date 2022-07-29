@@ -12,9 +12,9 @@
 		- [Logistic Regression (Classification):](#logistic-regression-classification)
 
 ## **EDA**
-  1. [Zomato Data EDA](https://github.com/desai-nitin/DataScience/blob/main/EDA%20%20Zomato%20Dataset.ipynb)
-  2. [Black Friday Dataset EDA and Feature Engineering](https://github.com/desai-nitin/DataScience/blob/main/EDA%20and%20Feature%20Engineering%20-%20Black%20Friday%20Dataset.ipynb)
-  3. [Flight Price Prediction EDA and Feature Engineering]((https://github.com/desai-nitin/DataScience/blob/main/EDA%20and%20Feature%20Engineering%20for%20Flight%20Price%20Prediction.ipynb))
+  1. [Zomato Data EDA](https://github.com/desai-nitin/DataScience/blob/main/EDA_Zomato_Dataset.ipynb)
+  2. [Black Friday Dataset EDA and Feature Engineering](https://github.com/desai-nitin/DataScience/blob/main/EDA_And_Feature_Engineering_Black_Friday_Dataset.ipynb)
+  3. [Flight Price Prediction EDA and Feature Engineering](https://github.com/desai-nitin/DataScience/blob/main/EDA_And_Feature_Engineering_For_Flight_Price_Prediction.ipynb)
    
  ****
 ## **Supervised ML**
@@ -116,15 +116,15 @@ $${1\over2m} \sum_{i=1}^m (h_\theta (x)^i -y^i)^2 + \lambda \sum_{j=1}^n |\theta
 	$$J(\theta)={1\over m}\sum_{i=1}^m cost(h_\theta(x^{(i)}),y^{(i)})$$
 		
 	$cost(h_\theta(x^{(i)}),y^{(i)}) = -y log(h_\theta(x^{(i)})) - (1-y) log(1-h_\theta(x^{(i)}))$
-
-	![LogCost](https://github.com/desai-nitin/DataScience/blob/main/readme_images/LogCost.png)
-
+<p align="center">
+	<img alt=logcost style="width:100px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/LogCost.png >
+</p>
 	When $y=1$, $cost(h_\theta(x),1) = -log(h_\theta(x))$ 
 
 	When $y=0$,	$cost(h_\theta(x),0) = -log(1-h_\theta(x))$ 
 
 <p align="center">
-	<img alt=y1 src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D1.png>
-	<img alt=y0 src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D0.png>
+	<img alt=y1 style="width:150px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D1.png>
+	<img alt=y0 style="width:150px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D0.png>
 </p>
 
