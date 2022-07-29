@@ -117,14 +117,11 @@ $${1\over2m} \sum_{i=1}^m (h_\theta (x)^i -y^i)^2 + \lambda \sum_{j=1}^n |\theta
 		
 	$cost(h_\theta(x^{(i)}),y^{(i)}) = -y log(h_\theta(x^{(i)})) - (1-y) log(1-h_\theta(x^{(i)}))$
 <p align="center">
-	<img alt=logcost style="width:100px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/LogCost.png >
+	<img alt=logcost style="width:200px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/LogCost.png >
 </p>
-	When $y=1$, $cost(h_\theta(x),1) = -log(h_\theta(x))$ 
-
-	When $y=0$,	$cost(h_\theta(x),0) = -log(1-h_\theta(x))$ 
 
 <p align="center">
-	<img alt=y1 style="width:150px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D1.png>
-	<img alt=y0 style="width:150px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D0.png>
+	<img alt=y1 style="width:200px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D1.png>
+	<img alt=y0 style="width:200px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D0.png>
 </p>
 
