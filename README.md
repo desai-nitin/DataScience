@@ -114,14 +114,81 @@ $${1\over2m} \sum_{i=1}^m (h_\theta (x)^i -y^i)^2 + \lambda \sum_{j=1}^n |\theta
 
   - Logistic Regression Cost Function:
 	$$J(\theta)={1\over m}\sum_{i=1}^m cost(h_\theta(x^{(i)}),y^{(i)})$$
-		
-	$cost(h_\theta(x^{(i)}),y^{(i)}) = -y log(h_\theta(x^{(i)})) - (1-y) log(1-h_\theta(x^{(i)}))$
+
+
+	$$cost(h_\theta(x^{(i)}),y^{(i)}) = -y log(h_\theta(x^{(i)})) - (1-y) log(1-h_\theta(x^{(i)}))$$
+
 <p align="center">
-	<img alt=logcost style="width:200px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/LogCost.png >
+	<img alt=logcost style="width:400px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/LogCost.png >
 </p>
 
 <p align="center">
-	<img alt=y1 style="width:200px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D1.png>
-	<img alt=y0 style="width:200px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D0.png>
+	<img alt=y1 style="width:400px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D1.png>
+	<img alt=y0 style="width:400px;" src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/cost_y%3D0.png>
 </p>
 
+$$J(\theta_1)=-{1\over 2m}\sum_{i=1}^m (y^i log(h_\theta(x^{(i)})) + (1-y^i) log(1-h_\theta(x^{(i)})))$$
+
+Repeat until Convergence:
+
+{
+$$\theta_j := \theta_j - \alpha {\delta(J(\theta))\over\delta\theta_j}
+$$
+}
+
+#### Performance Matrix (Binary Classification):
+<p align="center">
+	<img alt=confusion_matrix src=https://github.com/desai-nitin/DataScience/blob/main/readme_images/confusion_matrix.png>
+</p>
+
+$$Precision = {True\;Positive\;(TP)\over{True\;Positive\;(TP) + False\;Positive\;(FP)}} = {True\;Positive\;(TP)\over{Total\;Positive\; Predictions}}$$
+
+$$Recall = {True\;Positive\;(TP)\over{True\;Positive\;(TP) + False\;Negative\;(FN)}} = {True\;Positive\;(TP)\over{Total\;Actual\; Positives}}$$
+Note- Recall is also called as Sensitivity or True Positive Rate
+$$F-\beta = {(1+\beta^2)*Precision\;*\;Recall\over{\beta^2 * Precision\;+\;Recall} }$$
+
+- When Focus is on both $FP$ and $FN$ we use $\beta =1$,
+$$F1 = {2*Precision\;*\;Recall\over{Precision\;+\;Recall}}$$
+(Harmonic Mean)
+
+- When we want more weight on Precision, less weight on Recall we use $\mathbf{\beta <1}$,
+
+	Let $\beta=0.5$
+$$F0.5 = {(1+0.5^2)*Precision\;*\;Recall\over{0.5^2 * Precision\;+\;Recall}} = {1.25*Precision\;*\;Recall\over{0.25 * Precision\;+\;Recall}}$$
+
+- When we want more weight on Recall, less weight on Precision we use $\mathbf{\beta >1}$,
+
+	Let $\beta=2$
+$$F2 = {(1+2^2)*Precision\;*\;Recall\over{2^2 * Precision\;+\;Recall}} = {5*Precision\;*\;Recall\over{4 * Precision\;+\;Recall}}$$
+
+Note - *Above measures are used in Binary as well as Multi-Class Classification problems*
+
+<a href=https://machinelearningmastery.com/tour-of-evaluation-metrics-for-imbalanced-classification/ > Click </a> for more detailed measures for Imbalanced Classification.
+
+
+### Naive Bayes Classifier
+- Naive Bayes is a classification algorithm for binary (two-class) and multiclass classification problems.
+	- It is called Naive Bayes or idiot Bayes because the calculations of the probabilities for each class.
+  - Before we dive into Bayes theorem, let’s review marginal, joint, and conditional probability.
+    - **Marginal Probability** : The probability of an event irrespective of the outcomes of other random variables. <br>e.g. P(A)= Fetching random card from deck of cards P(3 of diamond)=1/52
+    - **Joint Probability**: Probability of two (or more) simultaneous events. <br>e.g. P(A and B) or P(A, B)= probability of picking up a card that is both red and 6 is P(6 ⋂ red) = 2/52 = 1/26
+    - **Conditional Probability**: Probability of one (or more) event given the occurrence of another event. <br>e.g. P(A given B) or P(A | B)= probability that you get a 6, given that you drew a red card is P(6│red) = 2/26 = 1/13
+      - The conditional probability can be calculated using the joint probability; for example:
+		P(A | B) = P(A ⋂ B) / P(B)
+  - **Bayes Theorem**: It is a way of calculating a conditional probability without the joint probability.
+    - P(A ∣ B) = P(A ⋂ B) / P(B)  = P(A)⋅P(B ∣ A) / P(B)<br>
+where:<br>
+P(A)= The probability of A occurring<br>
+P(B)= The probability of B occurring<br>
+P(A∣B)=The probability of A given B<br>
+P(B∣A)= The probability of B given A<br>
+P(A⋂B))= The probability of both A and B occurring<br>
+  <br>The terms in the Bayes Theorem equation are given names depending on the context where the equation is used.<br>
+  -P(A) : **Prior probability**.<br>
+  -P(B) : **Evidence**.<br>
+  -P(A|B) : **Posterior probability**.<br>
+  -P(B|A) : **Likelihood**.<br>
+  -Bayes Theorom can be rewritten as: <br>**Posterior = Likelihood * Prior / Evidence**<br>Eg. What is the probability that there is fire given that there is smoke?<br>
+Where P(Fire) is the Prior, P(Smoke|Fire) is the Likelihood, and P(Smoke) is the evidence:<br>
+P(Fire|Smoke) = P(Smoke|Fire) * P(Fire) / P(Smoke)
+​
